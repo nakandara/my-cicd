@@ -1,13 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import Theme from './components/Theme'
 
 function App() {
   return (
     <div className="App">
+      <Theme />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.pramod 
+          Edit <code>src/App.js</code> and save to reload.pramod
         </p>
         <a
           className="App-link"
