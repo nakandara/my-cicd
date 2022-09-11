@@ -4,8 +4,9 @@ import Box from '@mui/material/Box';
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import Egpage from './Egpage';
 
-const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
 function Theme() {
   const theme = useTheme();
@@ -14,7 +15,7 @@ function Theme() {
     <Box
       sx={{
         display: 'flex',
-        width: '100%',
+        width: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         bgcolor: 'background.default',
@@ -23,7 +24,8 @@ function Theme() {
         p: 3,
       }}
     >
-      {theme.palette.mode} mode
+      {/* {theme.palette.mode} mode */}
+      <Egpage />
       <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
         {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
       </IconButton>
