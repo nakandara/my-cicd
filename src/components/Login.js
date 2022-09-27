@@ -41,7 +41,7 @@ function Login() {
                 </div>
                 {error && <Alert variant="danger">{error}</Alert>}
                 <div className="text-center mt-4 name">
-                    Login
+                    LOGIN
                 </div>
                 <form onSubmit={handleSubmit} className="p-3 mt-3">
                     <div className="form-field d-flex align-items-center">
@@ -59,7 +59,7 @@ function Login() {
                     <GoogleButton className="btn mt-3" onClick={handleGooglesignIn}>Google Login</GoogleButton>
                 </form>
                 <div className="text-center fs-6">
-                    <a>Forget password?</a> or <Link to="/signup" >Sign up</Link>
+                    or <Link to="/signup" >Sign up</Link>
                 </div>
 
             </div>
