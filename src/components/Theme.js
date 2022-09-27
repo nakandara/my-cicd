@@ -6,10 +6,15 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Egpage from './Egpage';
 
+
+
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
 function Theme() {
+
   const theme = useTheme();
+
+
   const colorMode = React.useContext(ColorModeContext);
   return (
     <Box
@@ -26,9 +31,11 @@ function Theme() {
     >
       {/* {theme.palette.mode} mode */}
       <Egpage />
+
       <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
         {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-      </IconButton>
+      </IconButton >
+
     </Box>
   );
 }
