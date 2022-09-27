@@ -1,8 +1,12 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 function Test() {
   return (
-    <div>Test</div>
+    <div>
+
+
+      <Link to="/login" >Login</Link>
+    </div>
   )
 }
 

@@ -210,10 +210,11 @@ export default function Egpage() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <Test/>
+
               <AccountCircle />
             </IconButton>
           </Box>
+          <Test />
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
