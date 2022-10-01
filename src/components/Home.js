@@ -10,7 +10,7 @@ function Home() {
     const [payload, setPayload] = useState("");
     const [password, setPassword] = useState("");
     const [getname, setGetname] = useState([]);
-    // const [getemail, setGetemail] = useState("");
+    //  const [getemail, setGetemail] = useState("");
     // const [getpayload, setGetpayload] = useState("");
     // const newLOguser1 = {
     //     email,
@@ -28,10 +28,44 @@ function Home() {
 
 
     useEffect(() => {
+        const getlogdata = async () => {
+            axios.get("http://ec2-54-91-203-24.compute-1.amazonaws.com:8090/loguser/").then((res) => {
+
+                console.log(res.data[0])
+                setGetname(res.data)
+                // setGetemail(res.data.email)
+                // setGetpayload(res.data.payload)
+
+            }).catch((err) => {
+                alert(err)
+            })
+        }
+        const googlelogin = async () => {
+
+            setEmail(user.email)
+            setPassword(user.photoURL)
+            setPayload(user.displayName)
+            try {
+                const newLOguser1 = {
+                    email,
+                    password,
+                    payload
+                }
+                axios.post("http://ec2-54-91-203-24.compute-1.amazonaws.com:8090/loguser/add", newLOguser1).then(() => {
+
+                    console.log("addd")
+
+                }).catch((err) => {
+                    alert(err)
+                })
+            } catch (error) {
+                console.log(error.message)
+            }
+        }
         getlogdata()
         googlelogin()
-    }, [email]);
-  
+    }, [email, password, payload, user.email, user.photoURL, user.displayName]);
+
 
     // const getlogdata = async () => {
     //     try {
@@ -50,40 +84,7 @@ function Home() {
     //     }
     // }
 
-    const getlogdata = async () => {
-        axios.get("http://ec2-54-91-203-24.compute-1.amazonaws.com:8090/loguser/").then((res) => {
 
-            console.log(res.data[0])
-            setGetname(res.data)
-            // setGetemail(res.data.email)
-            // setGetpayload(res.data.payload)
-
-        }).catch((err) => {
-            alert(err)
-        })
-    }
-    const googlelogin = async () => {
-
-        setEmail(user.email)
-        setPassword(user.photoURL)
-        setPayload(user.displayName)
-        try {
-            const newLOguser1 = {
-                email,
-                password,
-                payload
-            }
-            axios.post("http://ec2-54-91-203-24.compute-1.amazonaws.com:8090/loguser/add", newLOguser1).then(() => {
-
-                console.log("addd")
-
-            }).catch((err) => {
-                alert(err)
-            })
-        } catch (error) {
-            console.log(error.message)
-        }
-    }
 
     const loguthandler = async () => {
         try {
@@ -103,8 +104,8 @@ function Home() {
 
                 </div>
             })}</div>
-            <div><button onClick={googlelogin}>lklk</button></div>
-            
+
+
         </div>
     )
 }
