@@ -29,7 +29,7 @@ function Home() {
 
     useEffect(() => {
         const getlogdata = async () => {
-            axios.get("http://ec2-54-91-203-24.compute-1.amazonaws.com:8090/loguser/").then((res) => {
+            axios.get("http://localhost:8090/loguser/").then((res) => {
 
                 console.log(res.data[0])
                 setGetname(res.data)
@@ -51,7 +51,7 @@ function Home() {
                     password,
                     payload
                 }
-                axios.post("http://ec2-54-91-203-24.compute-1.amazonaws.com:8090/loguser/add", newLOguser1).then(() => {
+                axios.post("http://localhost:8090/loguser/add", newLOguser1).then(() => {
 
                     console.log("addd")
 
