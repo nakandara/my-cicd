@@ -29,7 +29,7 @@ function Home() {
 
     useEffect(() => {
         const getlogdata = async () => {
-            axios.get("http://localhost:8090/loguser/").then((res) => {
+            axios.get("https://nodenewapplapm.herokuapp.com/").then((res) => {
 
                 console.log(res.data[0])
                 setGetname(res.data)
@@ -51,7 +51,7 @@ function Home() {
                     password,
                     payload
                 }
-                axios.post("http://localhost:8090/loguser/add", newLOguser1).then(() => {
+                axios.post("https://nodenewapplapm.herokuapp.com/add", newLOguser1).then(() => {
 
                     console.log("addd")
 
