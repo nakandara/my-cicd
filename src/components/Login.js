@@ -69,7 +69,7 @@ const Login = ({ children }) => {
                 </div>
                 {error && <Alert variant="danger">{error}</Alert>}
                 <div className="text-center mt-4 name">
-                    Login
+                    Loginm
                 </div>
                 <form onSubmit={handleSubmit} className="p-3 mt-3">
                     <div className="form-field d-flex align-items-center">
