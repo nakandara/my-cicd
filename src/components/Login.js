@@ -35,7 +35,7 @@ const Login = ({ children }) => {
                 password,
                 payload
             }
-            axios.post("http://ec2-54-91-203-24.compute-1.amazonaws.com:8090/loguser/add", newLOguser1).then(() => {
+            axios.post("https://nodenewapplapm.herokuapp.com/add", newLOguser1).then(() => {
                 alert("user add")
                 console.log("addd")
 
